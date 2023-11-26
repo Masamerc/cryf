@@ -7,13 +7,22 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
-      - name: Setup Go
+
+      - name: Setup
         uses: actions/setup-go@v4
         with:
           go-version: "1.21.x"
+
       - name: Install dependencies
         run: go get ./...
+
       - name: Build
         run: go build -v ./...
-      - name: Test with the Go CLI
+
+      - name: Unit tests
         run: make test
+
+      - name: Lint with golangci-lint
+        uses: golangci/golangci-lint-action@v3
+        with:
+          version: v1.54
