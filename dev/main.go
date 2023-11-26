@@ -9,9 +9,7 @@ import (
 
 func dummyGen(generator dummy.Generator) {
 	record := generator.Generate()
-	record2 := generator.Generate()
 	record.Preview()
-	record2.Preview()
 }
 
 func main() {
@@ -21,4 +19,7 @@ func main() {
 	generator := dummy.NewSalesRecordGenerator("all")
 	dummyGen(generator)
 
+	for i := 0; i < 10; i++ {
+		dummyGen(generator)
+	}
 }

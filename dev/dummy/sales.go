@@ -1,6 +1,10 @@
 package dummy
 
-import "fmt"
+import (
+	"fmt"
+
+	"github.com/google/uuid"
+)
 
 type SalesRecord struct {
 	Date     string
@@ -45,9 +49,9 @@ func NewSalesRecordGenerator(dateRange string) *SalesRecordGenerator {
 
 func (g SalesRecordGenerator) Generate() Record {
 	return SalesRecord{
-		Date:   "dummy",
-		Id:     "dummy",
-		Amount: 100,
+		Date:   RandomDate(g.dateRange),
+		Id:     uuid.NewString(),
+		Amount: RandomAmount(SALES),
 		Location: &Location{
 			City:      "dummy",
 			State:     "dummy",
