@@ -5,4 +5,4 @@ set -e
 set -o pipefail
 
 # lint Go code
-golangci-lint run -v ./...
+golangci-lint run
