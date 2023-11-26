@@ -1,11 +1,26 @@
 package dummy
 
+import "fmt"
+
 type SalesRecord struct {
 	Date     string
 	Id       string
 	Amount   int
 	Location *Location
 	Item     *Item
+}
+
+func (r SalesRecord) Preview() {
+	fmt.Println("Date: ", r.Date)
+	fmt.Println("Id: ", r.Id)
+	fmt.Println("Amount: ", r.Amount)
+	fmt.Println("Location:")
+	fmt.Println("  City: ", r.Location.City)
+	fmt.Println("  State: ", r.Location.State)
+	fmt.Println("  Storename: ", r.Location.StoreName)
+	fmt.Println("Item: ")
+	fmt.Println("  Category: ", r.Item.Category)
+	fmt.Println()
 }
 
 type Location struct {

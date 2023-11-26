@@ -1,6 +1,8 @@
 package dummy
 
-type Record interface{}
+type Record interface {
+	Preview()
+}
 
 type Generator interface {
 	Generate() Record

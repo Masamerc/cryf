@@ -9,7 +9,9 @@ import (
 
 func dummyGen(generator dummy.Generator) {
 	record := generator.Generate()
-	fmt.Println(record)
+	record2 := generator.Generate()
+	record.Preview()
+	record2.Preview()
 }
 
 func main() {
