@@ -1,0 +1,8 @@
+# exit if anything fails
+set -e
+
+# return the status of the last command that exited with a non-zero status
+set -o pipefail
+
+# lint Go code
+golangci-lint run -v ./...
